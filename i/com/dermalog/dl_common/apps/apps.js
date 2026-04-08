@@ -274,12 +274,6 @@ dermalog.dl_common.apps.version = {
                     }, error: function (pjqXHR, pTextStatus, pErrorThrown) {
                         let isHandled = false;
                         pSessionTimeoutObserver.Stop();
-                        if (_options.onExpired) {
-                            isHandled = _options.onExpired("CONNECTION");
-                            if (typeof isHandled === "object") {
-                                isHandled = isHandled.isHandled;
-                            }
-                        }
                         if (isHandled !== true) {
                             dermalog.dl_common.apps.ApexShowAlert("Stop Session-Observer due to no connection to the server!");
                         }
@@ -992,6 +986,8 @@ dermalog.dl_common.apps.version = {
                             isHandled = isHandled.isHandled;
                         }
                     }
+                    if (isHandled !== false) {
+                        dermalog.dl_common.apps.ApexShowAlert("Stop Session-Observer due to no connection to the server!");
                     }
                 }
             });
@@ -2534,7 +2530,7 @@ dermalog.dl_common.apps.version = {
      * @function
      * @memberOf pApps
      */
-
+    pApps.ApexShowAlert = function (pMsg, pOptions) {
         if (typeof pMsg !== "string" || dermalog.dl_common.utils.isEmpty(pMsg)) {
             throw new Error("pMsg is not a string or empty!");
         }
