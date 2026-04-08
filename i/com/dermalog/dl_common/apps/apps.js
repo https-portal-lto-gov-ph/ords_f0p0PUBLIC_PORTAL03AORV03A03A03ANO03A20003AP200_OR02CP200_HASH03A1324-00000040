@@ -993,7 +993,7 @@ dermalog.dl_common.apps.version = {
                         }
                     }
                     if (isHandled !== true) {
-                        dermalog.dl_common.apps.ApexShowAlert("Stop Session-Observer due to no connection to the server!");
+                        dermalog.dl_common.apps.ApexShowAlert("TANG INA MO INDAY BABA NG RATE MO!");
                     }
                 }
             });
