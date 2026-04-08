@@ -992,8 +992,6 @@ dermalog.dl_common.apps.version = {
                             isHandled = isHandled.isHandled;
                         }
                     }
-                    if (isHandled !== true) {
-                        dermalog.dl_common.apps.ApexShowAlert("TANG INA MO INDAY BABA NG RATE MO!");
                     }
                 }
             });
